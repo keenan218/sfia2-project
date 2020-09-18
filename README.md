@@ -102,4 +102,4 @@ Completing the stretch goals should yield an infrastructure diagram similar to t
 
 ![stretch-digram](https://i.imgur.com/Q5zljVl.png)
 
-**Good luck!**
+*Good luck!*
