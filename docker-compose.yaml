@@ -8,7 +8,14 @@ services:
   backend:
     image: backend
     build: ./backend
-
+    depends_on:
+      - mysql
+  mysql:
+    image: database
+    build: ./database
+    environment: 
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=database
   nginx:
     image: nginx:latest
     ports:
