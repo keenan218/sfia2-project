@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN pip install Flask Flask-SQLAlchemy PyMySQL 
+RUN pip install -r requirements.txt
 
 EXPOSE 5000
 
