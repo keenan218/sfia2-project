@@ -1,1 +1,22 @@
+version: '3.5'
+services:
+  frontend:
+    image: frontend
+    build: ./frontend
+    depends_on:
+      - backend
+  backend:
+    image: backend
+    build: ./backend
 
+  nginx:
+    image: nginx:latest
+    ports:
+    - target: 80
+      published: 80
+    volumes:
+    - type: bind
+      source: ./nginx/nginx.conf
+      target: /etc/nginx/nginx.conf
+    depends_on:
+      - frontend
