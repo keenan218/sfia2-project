@@ -8,8 +8,10 @@ services:
     image: backend:latest
     build: ./backend
     environment: 
-      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${SECRET_KEY}
       - MYSQL_DATABASE=database
+      - DATABASE_URI=${DATABASE_URI}
+      - SECRET_KEY=${SECRET_KEY}
  
   database:
     image: database:latest
