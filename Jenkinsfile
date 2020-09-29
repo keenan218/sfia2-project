@@ -5,7 +5,7 @@ pipeline{
             rollback = 'false'
         }
         stages{
-            stage('Build Image'){
+            /* stage('Build Image'){
                 steps{
                     script{
                         if (env.rollback == 'false'){
@@ -28,6 +28,16 @@ pipeline{
             stage('Deploy App'){
                 steps{
                     sh "docker-compose up -d"
+                }
+            } */
+            stage('Build') {
+                steps {
+                    sh "docker-compose up -d"
+                }
+            }
+            stage('Test') {
+                steps {
+                    sh "docker ps -a"
                 }
             }
         }
