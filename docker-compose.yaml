@@ -10,7 +10,7 @@ services:
     environment: 
       - MYSQL_ROOT_PASSWORD=${SECRET_KEY}
       - MYSQL_DATABASE=database
-      - DATABASE_URI=${DATABASE_URI}
+      - DATABASE_URI=mysql+pymysql://root:password@mysql:3306/users
       - SECRET_KEY=${SECRET_KEY}
  
   database:
