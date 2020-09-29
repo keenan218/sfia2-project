@@ -38,7 +38,7 @@ mysql+pymysql://[db-user]:[db-password]@[db-host]/[db-name]
 An example of this would be:
 
 ```
-mysql+pymysql://root:password@mysql:3306/orders
+mysql+pymysql://root:password@mysql:3306/users
 ```
 
 ### Environment Variables
