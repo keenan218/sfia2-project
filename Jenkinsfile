@@ -3,8 +3,8 @@ pipeline{
         environment {
             app_version = 'v1'
             rollback = 'false'
-            DB_PASSWORD = password
-            SECRET_KEY = password
+            DB_PASSWORD = 'password'
+            SECRET_KEY = 'password'
         }
         stages{
             /* stage('Build Image'){
@@ -35,7 +35,7 @@ pipeline{
 
             stage('Build') {
                 steps {
-                    sh "docker-compose up"
+                    sh "docker-compose up -d"
                 }
             }
             stage('Test') {
