@@ -30,6 +30,11 @@ pipeline{
                     sh "docker-compose up -d"
                 }
             } */
+            stage('Stop Nginx') {
+                steps {
+                    sh "sudo systemctl stop nginx"
+                }
+            }
             stage('Build') {
                 steps {
                     sh "docker-compose up -d"
