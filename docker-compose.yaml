@@ -14,6 +14,7 @@ services:
       - SECRET_KEY=${SECRET_KEY}
  
   database:
+    tty: true
     image: database:latest
     build: ./database
     environment: 
