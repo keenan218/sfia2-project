@@ -1,11 +1,11 @@
 version: '3.5'
 services:
   frontend:
-    image: frontend:latest
+    image: frontend #:latest
     build: ./frontend
     
   backend:
-    image: backend:latest
+    image: backend #:latest
     build: ./backend
     environment: 
       - MYSQL_ROOT_PASSWORD=${DB_PASWORD}
@@ -15,7 +15,7 @@ services:
  
   database:
     tty: true
-    image: database:latest
+    image: database #:latest
     build: ./database
     environment: 
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
