@@ -3,6 +3,8 @@ services:
   frontend:
     image: frontend #:latest
     build: ./frontend
+    depends_on:
+      - backend
     
   backend:
     image: backend #:latest
@@ -12,7 +14,9 @@ services:
       - MYSQL_DATABASE=database
       - DATABASE_URI=mysql+pymysql://root:password@mysql:3306/users
       - SECRET_KEY=${SECRET_KEY}
- 
+    depends_on:
+      - database
+
   database:
     tty: true
     image: database #:latest
@@ -29,3 +33,5 @@ services:
     - type: bind
       source: ./nginx/nginx.conf
       target: /etc/nginx/nginx.conf
+    depends_on:
+      - frontend
