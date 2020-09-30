@@ -7,7 +7,7 @@ pipeline{
             SECRET_KEY = 'password'
         }
         stages{
-            /* stage('Build Image'){
+            stage('Build Image'){
                 steps{
                     script{
                         if (env.rollback == 'false'){
@@ -31,7 +31,7 @@ pipeline{
                 steps{
                     sh "docker-compose up -d"
                 }
-            } */
+            }
 
             stage('Build') {
                 steps {
