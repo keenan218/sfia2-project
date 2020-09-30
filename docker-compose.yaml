@@ -15,10 +15,10 @@ services:
       - DATABASE_URI=mysql+pymysql://root:password@mysql:3306/users
       - SECRET_KEY=${SECRET_KEY}
     depends_on:
-      - database
+      - mysql
 
-  database:
-    tty: true
+  mysql:
+    # tty: true
     image: database #:latest
     build: ./database
     environment: 
