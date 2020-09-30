@@ -3,6 +3,8 @@ pipeline{
         environment {
             app_version = 'v1'
             rollback = 'false'
+            DB_PASSWORD = password
+            SECRET_KEY = password
         }
         stages{
             /* stage('Build Image'){
