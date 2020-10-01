@@ -28,7 +28,7 @@ pipeline{
 //                     }
 //                 }
 //             }
-//             stage('Deploy App'){
+             stage('Deploy App'){
                 steps{
                     sh "docker-compose up -d"
                 }
