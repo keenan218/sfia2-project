@@ -8,7 +8,7 @@ pipeline{
         DB_PASSWORD = '${DB_PASSWORD}'
         SECRET_KEY = '${SECRET_KEY}'
     }
-//     stages{
+    stages{
 //         stage('Build Image'){
 //             steps{
 //                 script{
