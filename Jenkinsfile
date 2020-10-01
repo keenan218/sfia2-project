@@ -4,7 +4,7 @@ pipeline{
             app_version = 'v1'
             rollback = 'false'
             withCredentials([string(credentialsId: 'SECRET_KEY', variable: 'SECRET_KEY'),
-                           string(credentialsId: 'DB_PASSWORD', variable: 'DB_PASSWORD')]) {
+                           string(credentialsId: 'DB_PASSWORD', variable: 'DB_PASSWORD')])
             SECRET_KEY = 'password'
         }
 //         stages{
