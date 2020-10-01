@@ -29,20 +29,21 @@ pipeline{
 //                 }
 //             }
 //         }
-    stage('Deploy App'){
-        steps{
-            sh "docker-compose up -d"
+        stage('Deploy App'){
+            steps{
+                sh "docker-compose up -d"
+            }
         }
-    }
 
-    stage('Build') {
-        steps {
-            sh "docker-compose up -d"
+        stage('Build') {
+            steps {
+                sh "docker-compose up -d"
+            }
         }
-    }
-    stage('Test') {
-        steps {
-            sh "docker ps -a"
+        stage('Test') {
+            steps {
+                sh "docker ps -a"
+            }
         }
     }
 }
