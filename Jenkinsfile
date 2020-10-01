@@ -3,31 +3,32 @@ pipeline{
         environment {
             app_version = 'v1'
             rollback = 'false'
-            DB_PASSWORD = 'password'
+            withCredentials([string(credentialsId: 'SECRET_KEY', variable: 'SECRET_KEY'),
+                           string(credentialsId: 'DB_PASSWORD', variable: 'DB_PASSWORD')]) {
             SECRET_KEY = 'password'
         }
-        stages{
-            stage('Build Image'){
-                steps{
-                    script{
-                        if (env.rollback == 'false'){
-                            image = docker.build("keenan218/sfia2-project")
-                        }
-                    }
-                }
-            }
-            stage('Tag & Push Image'){
-                steps{
-                    script{
-                        if (env.rollback == 'false'){
-                            docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'){
-                                image.push("${env.app_version}")
-                            }
-                        }
-                    }
-                }
-            }
-            stage('Deploy App'){
+//         stages{
+//             stage('Build Image'){
+//                 steps{
+//                     script{
+//                         if (env.rollback == 'false'){
+//                             image = docker.build("keenan218/sfia2-project")
+//                         }
+//                     }
+//                 }
+//             }
+//             stage('Tag & Push Image'){
+//                 steps{
+//                     script{
+//                         if (env.rollback == 'false'){
+//                             docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'){
+//                                 image.push("${env.app_version}")
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//             stage('Deploy App'){
                 steps{
                     sh "docker-compose up -d"
                 }
