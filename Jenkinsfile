@@ -29,11 +29,16 @@ pipeline{
 //                 }
 //             }
 //         }
-        stage('Deploy App'){
-            steps{
-                sh "docker-compose up -d"
-            }
-        }
+      //  stage('Declare variables'){
+      //      steps{
+      //          sh
+      //      }
+      //  }
+      //  stage('Deploy App'){
+      //      steps{
+      //          sh "docker-compose up -d"
+      //      }
+      //  }
 
         stage('Build') {
             steps {
