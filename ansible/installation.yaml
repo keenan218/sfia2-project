@@ -1,0 +1,39 @@
+---
+ - hosts: all
+  
+   tasks:
+    - name: 'Update APT package manager' 
+      become: true
+      apt:
+        update_cache: yes
+
+    - name: 'Install OpenJDK Java'
+      become: yes
+      apt:
+        name: "openjdk-8-jdk"
+        state: present
+
+    - name: 'Install jenkins apt repository key'
+      apt_key: url=https://pkg.jenkins.io/debian-stable/jenkins.io.key state=present
+      become: yes
+
+    - name: 'Ensure the repository is configured'
+      apt_repository: repo='deb https://pkg.jenkins.io/debian-stable binary/' state=present
+      become: yes
+
+    - name: 'Install Jenkins'
+      apt: name=jenkins update_cache=yes
+      become: yes
+
+    - name: 'Ensure jenkins is running'
+      service: name=jenkins state=started
+
+#    - name: 'Get Admin password for Jenkins'
+#      shell: cat /var/lib/jenkins/secrets/initialAdminPassword
+#      changed_when: false
+#      register: result
+#
+#    - name: 'Print Admin Jenkins password'
+#      debug:
+#        var: result.stdout
+#
