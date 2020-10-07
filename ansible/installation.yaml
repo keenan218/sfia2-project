@@ -28,12 +28,12 @@
     - name: 'Ensure jenkins is running'
       service: name=jenkins state=started
 
-#    - name: 'Get Admin password for Jenkins'
-#      shell: cat /var/lib/jenkins/secrets/initialAdminPassword
-#      changed_when: false
-#      register: result
-#
-#    - name: 'Print Admin Jenkins password'
-#      debug:
-#        var: result.stdout
-#
+    - name: 'Get Admin password for Jenkins'
+      shell: cat /var/lib/jenkins/secrets/initialAdminPassword
+      changed_when: false
+      register: result
+
+    - name: 'Print Admin Jenkins password'
+      debug:
+        var: result.stdout
+
