@@ -7,11 +7,12 @@ pipeline{
         //DB_PASSWORD = '${DB_PASSWORD}'
         //SECRET_KEY = '${SECRET_KEY}'
     }
-    withCredentials([secretKey(credentialsId: 'SECRET_KEY', variable: 'SECRET_KEY'),
-                             dbPassword(credentialsId: 'DB_PASSWORD', variable: 'DB_PASSWORD')]) {
-                             // note: single quotes prevent Groovy interpolation; expansion is by Bourne Shell, which is what you want
-                             sh 'echo $DB_PASSWORD'
+
+    withCredentials([string(credentialsId: 'DB_PASSWORD', variable: 'dbPwd'), string(credentialsId: 'SECRET_KEY', variable: 'secretKey')]) {
+        // some block
+        sh 'echo $DB_PASSWORD'
     }
+
     stages{
         stage('Download Docker and docker-compose') {
             steps {
