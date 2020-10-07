@@ -3,10 +3,10 @@ pipeline{
     environment {
         app_version = 'v1'
         rollback = 'false'
-       // withCredentials([string(credentialsId: 'SECRET_KEY', variable: 'SECRET_KEY'),
-       //                string(credentialsId: 'DB_PASSWORD', variable: 'DB_PASSWORD')])
-        DB_PASSWORD = '${DB_PASSWORD}'
-        SECRET_KEY = '${SECRET_KEY}'
+        withCredentials([string(credentialsId: 'SECRET_KEY', variable: 'SECRET_KEY'),
+                        string(credentialsId: 'DB_PASSWORD', variable: 'DB_PASSWORD')])
+        //DB_PASSWORD = '${DB_PASSWORD}'
+        //SECRET_KEY = '${SECRET_KEY}'
     }
     stages{
         stage('Download Docker and docker-compose') {
