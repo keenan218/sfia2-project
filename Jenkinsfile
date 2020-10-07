@@ -8,11 +8,6 @@ pipeline{
         //SECRET_KEY = '${SECRET_KEY}'
     }
 
-    withCredentials([string(credentialsId: 'DB_PASSWORD', variable: 'dbPwd'), string(credentialsId: 'SECRET_KEY', variable: 'secretKey')]) {
-        // some block
-        sh 'echo $DB_PASSWORD'
-    }
-
     stages{
         stage('configure credential') {
             steps{
