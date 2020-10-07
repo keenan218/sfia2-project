@@ -14,6 +14,15 @@ pipeline{
     }
 
     stages{
+        stage('configure credential') {
+            steps{
+                withCredentials([string(credentialsId: 'DB_PASSWORD', variable: 'dbPwd'), string(credentialsId: 'SECRET_KEY', variable: 'secretKey')]) {
+                    // some block
+                    sh 'echo $DB_PASSWORD'
+                }
+            }
+        }
+
         stage('Download Docker and docker-compose') {
             steps {
                 sh '''
