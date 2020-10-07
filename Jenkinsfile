@@ -9,13 +9,20 @@ pipeline{
     }
 
     stages{
-        stage('configure credential') {
+        stage('configure environment credentials') {
             steps{
                 withCredentials([string(credentialsId: 'DB_PASSWORD', variable: 'dbPwd'),
                                  string(credentialsId: 'SECRET_KEY', variable: 'secretKey')]) {
                     // some block
                     sh 'echo $DB_PASSWORD'
                 }
+            }
+        }
+
+        stage('SSH to test vm') {
+            steps{
+                sh 'ssh -o StrictHostKeyChecking=no ubuntu@ec2-35-178-230-144.eu-west-2.compute.amazonaws.com'
+
             }
         }
 
@@ -29,6 +36,7 @@ pipeline{
                 '''
             }
         }
+
         stage('Build') {
             steps {
                 sh "docker-compose up -d --build"
