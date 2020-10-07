@@ -23,6 +23,7 @@ pipeline{
             steps{
                 sh '''
                 ssh ubuntu@ec2-35-178-230-144.eu-west-2.compute.amazonaws.com -tt -o StrictHostKeyChecking=no
+                exit
                 >> EOF
                 '''
             }
