@@ -3,8 +3,13 @@ pipeline{
     environment {
         app_version = 'v1'
         rollback = 'false'
-        withCredentials([string(credentialsId: 'SECRET_KEY', variable: 'SECRET_KEY'),
-                        string(credentialsId: 'DB_PASSWORD', variable: 'DB_PASSWORD')])
+        withCredentials([secretKey(credentialsId: 'SECRET_KEY', variable: 'SECRET_KEY'),
+                        dbPassword(credentialsId: 'DB_PASSWORD', variable: 'DB_PASSWORD')]) {
+                        // note: single quotes prevent Groovy interpolation; expansion is by Bourne Shell, which is what you want
+                        sh 'echo $DB_PASSWORD'
+                        // or inside double quotes for string interpolation
+                        echo "SECRET_KEY is $SECRET_KEY"
+        }
         //DB_PASSWORD = '${DB_PASSWORD}'
         //SECRET_KEY = '${SECRET_KEY}'
     }
