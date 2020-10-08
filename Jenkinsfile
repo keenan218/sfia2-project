@@ -3,9 +3,6 @@ pipeline{
     environment {
         app_version = 'v1'
         rollback = 'false'
-
-        //DB_PASSWORD = '${DB_PASSWORD}'
-        //SECRET_KEY = '${SECRET_KEY}'
     }
 
     stages{
@@ -19,6 +16,7 @@ pipeline{
                     cd sfia2-project
                     sudo -E DB_PASSWORD=$dbPwd SECRET_KEY=$secretKey docker-compose up -d --build
                     docker ps -a
+                    pytest --cov application
                     exit
                     >> EOF
                     '''
@@ -28,13 +26,13 @@ pipeline{
     }
 }
 
-//         stage('Test') {
-//             steps {
-//                 sh ""
-//             }
-//         }
+ //        stage('Test') {
+ //            steps {
+ //                sh ""
+ //            }
+ //        }
 
-//         stage('Download Docker and docker-compose') {
+ //        stage('Download Docker and docker-compose') {
  //             steps {
  //                 sh '''
  //                 curl https://get.docker.com | sudo bash
@@ -50,7 +48,7 @@ pipeline{
  //                 sh "docker-compose up -d --build"
  //             }
  //         }
-//         stage('Build Image'){
+ //        stage('Build Image'){
  //             steps{
  //                 script{
  //                     if (env.rollback == 'false'){
