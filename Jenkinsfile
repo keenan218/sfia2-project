@@ -17,6 +17,7 @@ pipeline{
                     sudo -E DB_PASSWORD=$dbPwd SECRET_KEY=$secretKey docker-compose up -d --build
                     docker ps -a
                     docker exec sfia2-project_frontend_1 pytest --cov application
+                    docker exec sfia2-project_backend_1 pytest --cov application
                     exit
                     >> EOF
                     '''
