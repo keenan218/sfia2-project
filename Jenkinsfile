@@ -9,17 +9,7 @@ pipeline{
     }
 
     stages{
-//         stage('configure environment credentials') {
-//             steps{
-//                 withCredentials([string(credentialsId: 'DB_PASSWORD', variable: 'dbPwd'),
-//                                  string(credentialsId: 'SECRET_KEY', variable: 'secretKey')]) {
-//                     // some block
-//                     sh 'echo $DB_PASSWORD'
-//                 }
-//             }
-//         }
-
-        stage('SSH to test vm') {
+        stage('SSH to test vm, configure environment vars') {
             steps{
                 withCredentials([string(credentialsId: 'DB_PASSWORD', variable: 'dbPwd'),
                                  string(credentialsId: 'SECRET_KEY', variable: 'secretKey')]) {
@@ -35,14 +25,15 @@ pipeline{
                 }
             }
         }
+    }
+}
 
 //         stage('Test') {
 //             steps {
 //                 sh ""
 //             }
 //         }
-    }
-}
+
 //         stage('Download Docker and docker-compose') {
  //             steps {
  //                 sh '''
@@ -79,13 +70,3 @@ pipeline{
  //                 }
  //             }
  //         }
-       //  stage('Declare variables'){
-       //      steps{
-       //          sh
-       //      }
-       //  }
-       //  stage('Deploy App'){
-       //      steps{
-       //          sh "docker-compose up -d"
-       //      }
-       //  }
