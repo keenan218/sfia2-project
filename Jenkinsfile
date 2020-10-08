@@ -24,7 +24,6 @@ pipeline{
                 sshagent(['ubuntu']) {
                     sh '''
                     ssh ubuntu@ec2-35-178-230-144.eu-west-2.compute.amazonaws.com -tty -o StrictHostKeyChecking=no
-                    >> EOF
                     exit
                     >> EOF
                     '''
