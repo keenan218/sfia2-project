@@ -1,6 +1,6 @@
 variable "ami-id" {
-  description = "AMI ID of ubuntu 18.04LTS eu-west-1"
-  default     = "ami-02df9ea15c1778c9c"
+  description = "AMI ID of ubuntu 18.04LTS eu-west-2"
+  default     = "ami-09a1e275e350acf38"
 }
 
 variable "instance-type" {
@@ -10,5 +10,5 @@ variable "instance-type" {
 
 variable "pem-key" {
   description = "Associated Key to SSH into the EC2 Instance"
-  default     = "SFIAjenkinsINST.pem"
+  default     = "terraform-keys"
 }

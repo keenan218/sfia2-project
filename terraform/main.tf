@@ -1,7 +1,7 @@
 provider "aws" {
-  version                 = "~> 2.0"
-  region                  = "eu-west-1"
-  shared_credentials_file = "~/.aws/credentials"
+    version = "~> 2.0"
+    region = "eu-west-2"
+    shared_credentials_file = "~/.aws/credentials"
 }
 
 resource "aws_instance" "EC2" {
