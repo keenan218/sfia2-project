@@ -10,10 +10,11 @@ variable "instance-type" {
 
 variable "pem-key" {
   description = "Associated Key to SSH into the EC2 Instance"
-  default     = "terraform-keys"
+  default     = "SFIAjenkinsINST.pem"
 }
 
 variable "security-group" {
   description = "Security group to give ssh, mysql, 80 and 8080 ports"
   default     = ["vpc-7e4f1b16", ]
 }
+

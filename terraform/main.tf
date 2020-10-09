@@ -24,3 +24,4 @@ resource "aws_db_instance" "RDS" {
   skip_final_snapshot  = true
   apply_immediately    = true
 }
+
