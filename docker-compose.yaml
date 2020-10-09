@@ -36,3 +36,5 @@ services:
       target: /etc/nginx/nginx.conf
     depends_on:
       - frontend
+
+
