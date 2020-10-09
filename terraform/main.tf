@@ -21,6 +21,7 @@ resource "aws_db_instance" "RDS" {
   username             = "root"
   password             = "password"
   parameter_group_name = "default.mysql5.7"
+  subnet_ids = ["subnet-009bc569", "subnet-6488121e", "subnet-cd1ab381]
   skip_final_snapshot  = true
   apply_immediately    = true
 }
