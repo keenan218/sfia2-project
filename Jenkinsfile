@@ -26,7 +26,6 @@ pipeline{
                     docker-compose ps
 
                     sudo -E TEST_DATABASE_URI=$tDB_URI SECRET_KEY=$dbPwd DB_PASSWORD=$dbPwd docker exec -it sfia2-project_frontend_1 pytest  --cov-report term --cov=application
-                    sudo -E TEST_DATABASE_URI=$tDB_URI SECRET_KEY=$dbPwd DB_PASSWORD=$dbPwd docker exec -it sfia2-project_backend_1 pytest  --cov-report term --cov=application
 
                     exit
                     >> EOF
@@ -37,6 +36,7 @@ pipeline{
     }
 }
 
+                    //sudo -E TEST_DATABASE_URI=$tDB_URI SECRET_KEY=$dbPwd DB_PASSWORD=$dbPwd docker exec -it sfia2-project_backend_1 pytest  --cov-report term --cov=application
 
 
 
