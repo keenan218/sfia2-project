@@ -10,6 +10,13 @@ resource "aws_instance" "EC2" {
   key_name      = var.pem-key
 }
 
+resource "aws_default_subnet" "default_az1" {
+  availability_zone = "eu-west-2c"
+
+  tags = {
+    Name = "Default subnet for eu-west-2c"
+  }
+}
 resource "aws_db_instance" "RDS" {
   identifier           = "test-db"
   allocated_storage    = 20
@@ -21,7 +28,7 @@ resource "aws_db_instance" "RDS" {
   username             = "root"
   password             = "password"
   parameter_group_name = "default.mysql5.7"
-  subnet_ids = ["subnet-009bc569", "subnet-6488121e", "subnet-cd1ab381]
+  db_subnet_group_name = "default-vpc-7e4f1b16"
   skip_final_snapshot  = true
   apply_immediately    = true
 }
