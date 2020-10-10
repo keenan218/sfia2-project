@@ -15,10 +15,17 @@ pipeline{
                     ssh ubuntu@ec2-18-133-188-208.eu-west-2.compute.amazonaws.com -tty -o StrictHostKeyChecking=no << EOF
                     git clone https://github.com/keenan218/sfia2-project.git
                     cd sfia2-project
+
+                    export DB_PASSWORD=$dbPwd
+                    export SECRET_KEY=$secretKey
+                    export TEST_DB_URI=$test_DB_URI
+
                     sudo -E DB_PASSWORD=$dbPwd SECRET_KEY=$secretKey TEST_DB_URI=$test_DB_URI docker-compose up -d --build
                     docker ps -a
-                    docker exec sfia2-project_frontend_1 pytest --cov application
-                    docker exec sfia2-project_backend_1 pytest --cov application
+
+                    sudo -E DB_PASSWORD=$dbPwd SECRET_KEY=$secretKey TEST_DB_URI=$test_DB_URI docker exec sfia2-project_frontend_1 pytest --cov application
+                    sudo -E DB_PASSWORD=$dbPwd SECRET_KEY=$secretKey TEST_DB_URI=$test_DB_URI docker exec -it sfia2-project_backend_1 pytest --cov application
+
                     exit
                     >> EOF
                     '''
