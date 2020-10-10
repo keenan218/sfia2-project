@@ -20,10 +20,11 @@ pipeline{
                     export SECRET_KEY=$secretKey
                     export TEST_DB_URI=$test_DB_URI
 
+                    sudo -E DB_PASSWORD=$dbPwd SECRET_KEY=$secretKey TEST_DB_URI=$test_DB_URI docker-compose up -d --build
+                    docker-compose ps
 
-
-                    docker exec sfia2-project_frontend_1 pytest --cov application
-                    docker exec -it sfia2-project_backend_1 pytest --cov application
+                    sudo -E TEST_DATABASE_URI=$test_DB_URI SECRET_KEY=$dbPwd DB_PASSWORD=$dbPwd docker exec sfia2-project_frontend_1 pytest  --cov-report term --cov=application
+                    sudo -E TEST_DATABASE_URI=$test_DB_URI SECRET_KEY=$dbPwd DB_PASSWORD=$dbPwd docker exec sfia2-project_backend_1 pytest  --cov-report term --cov=application
 
                     exit
                     >> EOF
@@ -33,8 +34,7 @@ pipeline{
         }
     }
 }
-//sudo -E DB_PASSWORD=$dbPwd SECRET_KEY=$secretKey TEST_DB_URI=$test_DB_URI docker-compose up -d --build
-//                    docker-compose ps
+
 
 
 
