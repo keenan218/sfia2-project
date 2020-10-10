@@ -3,5 +3,9 @@ output "ec2_id" {
 }
 
 output "rds_endpoint" {
-  value = aws_db_instance.default.endpoint
+  value = aws_db_instance.RDStest.endpoint
+}
+
+output "rds_endpoint" {
+  value = aws_db_instance.RDSprod.endpoint
 }

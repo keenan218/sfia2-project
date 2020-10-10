@@ -17,7 +17,7 @@ resource "aws_default_subnet" "default_az1" {
     Name = "Default subnet for eu-west-2c"
   }
 }
-resource "aws_db_instance" "RDS" {
+resource "aws_db_instance" "RDStest" {
   identifier           = "test-db"
   allocated_storage    = 20
   storage_type         = "gp2"
@@ -32,4 +32,18 @@ resource "aws_db_instance" "RDS" {
   skip_final_snapshot  = true
   apply_immediately    = true
 }
-
+resource "aws_db_instance" "RDSprod" {
+  identifier           = "prod-db"
+  allocated_storage    = 20
+  storage_type         = "gp2"
+  engine               = "mysql"
+  engine_version       = "5.7"
+  instance_class       = "db.t2.micro"
+  name                 = "prod_db"
+  username             = "root"
+  password             = "password"
+  parameter_group_name = "default.mysql5.7"
+  db_subnet_group_name = "default-vpc-7e4f1b16"
+  skip_final_snapshot  = true
+  apply_immediately    = true
+}
