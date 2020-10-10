@@ -14,19 +14,19 @@ pipeline{
                                  file(credentialsId: 'EWS_EC2_KEY', variable: 'SSH_PEM')]) {
 
                     sh '''
-                    ssh -tty -o StrictHostKeyChecking=no ubuntu@ec2-18-133-160-243.eu-west-2.compute.amazonaws.com  << EOF
+                    ssh -tty -o StrictHostKeyChecking=no -i $EWS_EC2_KEY ubuntu@ec2-18-133-160-243.eu-west-2.compute.amazonaws.com  << EOF
                     git clone https://github.com/keenan218/sfia2-project.git
                     cd sfia2-project
 
                     export DB_PASSWORD=$dbPwd
                     export SECRET_KEY=$secretKey
-                    export TEST_DB_URI=$test_DB_URI
+                    export TEST_DB_URI=$tDB_URI
 
-                    sudo -E DB_PASSWORD=$dbPwd SECRET_KEY=$secretKey TEST_DB_URI=$test_DB_URI docker-compose up -d --build
+                    sudo -E DB_PASSWORD=$dbPwd SECRET_KEY=$secretKey TEST_DB_URI=$tDB_URI docker-compose up -d --build
                     docker-compose ps
 
-                    sudo -E TEST_DATABASE_URI=$test_DB_URI SECRET_KEY=$dbPwd DB_PASSWORD=$dbPwd docker exec sfia2-project_frontend_1 pytest  --cov-report term --cov=application
-                    sudo -E TEST_DATABASE_URI=$test_DB_URI SECRET_KEY=$dbPwd DB_PASSWORD=$dbPwd docker exec sfia2-project_backend_1 pytest  --cov-report term --cov=application
+                    sudo -E TEST_DATABASE_URI=$tDB_URI SECRET_KEY=$dbPwd DB_PASSWORD=$dbPwd docker exec sfia2-project_frontend_1 pytest  --cov-report term --cov=application
+                    sudo -E TEST_DATABASE_URI=$tDB_URI SECRET_KEY=$dbPwd DB_PASSWORD=$dbPwd docker exec sfia2-project_backend_1 pytest  --cov-report term --cov=application
 
                     exit
                     >> EOF
