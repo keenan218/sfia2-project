@@ -14,7 +14,7 @@ pipeline{
                                  file(credentialsId: 'EWS_EC2_KEY', variable: 'SSH_PEM')]) {
 
                     sh '''
-                    ssh -tty -o StrictHostKeyChecking=no ubuntu@ec2-18-133-188-208.eu-west-2.compute.amazonaws.com  << EOF
+                    ssh -tty -o StrictHostKeyChecking=no ubuntu@ec2-18-133-160-243.eu-west-2.compute.amazonaws.com  << EOF
                     git clone https://github.com/keenan218/sfia2-project.git
                     cd sfia2-project
 
