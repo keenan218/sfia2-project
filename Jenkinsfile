@@ -25,7 +25,12 @@ pipeline{
                             export SECRET_KEY=$secretKey
                             export TEST_DB_URI=$tDB_URI
 
+                            mysql -h test-db.csnk6wgrqbvm.eu-west-2.rds.amazonaws.com -P 3306 -u root -p$dbPwd
+                            SOURCE database/Create.sql;
+                            exit
+
                             sudo -E TEST_DATABASE_URI=$tDB_URI SECRET_KEY=$dbPwd DB_PASSWORD=$dbPwd docker exec sfia2-project_frontend_1 pytest  --cov-report term --cov=application
+                            sudo -E TEST_DATABASE_URI=$tDB_URI SECRET_KEY=$dbPwd DB_PASSWORD=$dbPwd docker exec sfia2-project_backend_1 pytest  --cov-report term --cov=application
 
                             exit
                             >> EOF
@@ -56,6 +61,7 @@ pipeline{
                             mysql -h prod-db.csnk6wgrqbvm.eu-west-2.rds.amazonaws.com -P 3306 -u root -p$dbPwd
                             SOURCE database/Create.sql;
                             exit
+
                             exit
                             >> EOF
                             '''
