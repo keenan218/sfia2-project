@@ -53,7 +53,7 @@ pipeline{
                             sudo -E DB_PASSWORD=$dbPwd SECRET_KEY=$secretKey DATABASE_URI=$dbUri docker-compose up -d --build
                             docker-compose ps -a
 
-                            mysql -h test-db.csnk6wgrqbvm.eu-west-2.rds.amazonaws.com -P 3306 -u root -p$dbPwd
+                            mysql -h prod-db.csnk6wgrqbvm.eu-west-2.rds.amazonaws.com -P 3306 -u root -p$dbPwd
                             SOURCE database/Create.sql;
                             exit
                             exit
@@ -70,13 +70,6 @@ pipeline{
 //sudo -E TEST_DATABASE_URI=$tDB_URI SECRET_KEY=$dbPwd DB_PASSWORD=$dbPwd docker exec -it sfia2-project_backend_1 pytest  --cov-report term --cov=application
 
 
-
-
- //        stage('Test') {
- //            steps {
- //                sh ""
- //            }
- //        }
 
 
  //        stage('Build Image'){
