@@ -6,9 +6,17 @@ For this project we were tasked with deploying a prebuilt flask application. Sai
 
 ## Contents
 
-  - Project Infrarstructure
-  -
-
+  - Planning (https://github.com/keenan218/sfia2-project/blob/master/README.md#planning)
+  - Risk Assessment (https://github.com/keenan218/sfia2-project/blob/master/README.md#risk-assessment)
+  - Jira Board (https://github.com/keenan218/sfia2-project/blob/master/README.md#jira-board)
+  - Project Infrarstructure (https://github.com/keenan218/sfia2-project/blob/master/README.md#project-infrarstructure)
+  - Ansible (https://github.com/keenan218/sfia2-project/blob/master/README.md#ansible)
+  - Docker & docker-compose (https://github.com/keenan218/sfia2-project/blob/master/README.md#docker--docker-compose)
+  - Jenkins (https://github.com/keenan218/sfia2-project/blob/master/README.md#jenkins)
+  - Kubernetes (https://github.com/keenan218/sfia2-project/blob/master/README.md#kubernetes)
+  - Terraform (https://github.com/keenan218/sfia2-project/blob/master/README.md#terraform)
+  - Project Deployment (https://github.com/keenan218/sfia2-project/blob/master/README.md#project-deployment)
+  
 ## Planning
 As with every project a great deal of time is spent on planning and preperation, this ensures the project runs smoothly and allows the developer to stay on track having a list they can go back to monitoring their progress. 
 
