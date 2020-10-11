@@ -23,6 +23,20 @@ The Jira board helped with noting what my progress was throughout the course of 
 ## Project Infrarstructure
 As directed by the MVP, the project is set up in a way of being as automated as possible. Terraform is utilised to create an EC2 instance and two RDS databases. Ansible is then applied to install jenkins on the vm which was created. A webhook was utilised which allowed me to have the jenkins pipeline triggered as soon as a commit was made to the source code provider (github). Once Jenkins is triggers it builds the project in a testing environment, permitting it reaches 100% in the tests it then builds the project in a live environment, with Kubernetes being applied to deploy the application.
 
+### Ansible
+Ansible was utilised in this project to download java and jenkins onto the Jenkins EC2 instance. This allows a quick set up of the jenkins service as i am able to run one command and it downloads to a specified vm and returns the jenkins admin password required for me to log on to jenkins and proceed in setting up my pipeline. Due to time restraints ansible wasn't utilised to its fullest potential, with a manual set up of Docker, docker-compose and a jenkins user still required after the ansible job has been played. 
+
+### Docker & docker-compose
+Docker and docker-compose (DC) are utilised to containerise the deployment of the project, backend, frontent, mysql and nginx are all split nto their seperate containers. DC is utilised to build the application in both the testing environment and the live environment. 
+
+### Jenkins
+
+### Kubernetes
+
+### Terraform
+
+## Project Deployment 
+
 ## Brief
 
 The application must:
@@ -32,24 +46,6 @@ The application must:
 - Make use of a **managed Database solution**
 
 ## Application
-
-The application is a Flask application running in **2 micro-services** (*frontend* and *backend*).  
-
-The database directory is available should you: 
-  - want to use a MySQL container for your database at any point, *or*
-  - want to make use of the `Create.sql` file to **set up and pre-populate your database**.
-
-The application works by:
-1. The frontend service making a GET request to the backend service. 
-2. The backend service using a database connection to query the database and return a result.
-3. The frontend service serving up a simple HTML (`index.html`) to display the result.
-
-
-
-## Infrastructure
-
-The **Minimum Viable Product** for this project should at least demonstrate the following infrastructure diagram:
-
 ![mvp-diagram](https://i.imgur.com/i5qfOas.png)
 
 
