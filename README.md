@@ -53,8 +53,6 @@ The MVP has been reffered to a couple of times through this document, as such I 
 
 ### **Author**
 
-Keenan Bratley
-
-QA Cloud Native Consultant
-
-[KBratley@qa.com](KBratley@qa.com)
+* Keenan Bratley
+* QA Cloud Native Consultant
+* [KBratley@qa.com](KBratley@qa.com)
