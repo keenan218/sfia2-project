@@ -1,5 +1,7 @@
 # QAC SFIA2 Practical Project
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a30d4a530d4d4c78995d77083cd6888a)](https://app.codacy.com/gh/keenan218/sfia2-project?utm_source=github.com&utm_medium=referral&utm_content=keenan218/sfia2-project&utm_campaign=Badge_Grade)
+
 For this project we were tasked with deploying a prebuilt flask application. Said application consisted of a webpage showing entries from a mysql database, and a backend written in python. The deployment of this app required me to utilise most of what I have learnt in the academy up until this point. The main technologies used were: Ansible, AWS EC2, AWS RDS, Docker and Docker-Compose, Jenkins, Kubernetes and Terraform. 
 
 ## Contents
