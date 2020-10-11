@@ -54,11 +54,10 @@ pipeline{
                             docker-compose ps -a
 
                             mysql -h test-db.csnk6wgrqbvm.eu-west-2.rds.amazonaws.com -P 3306 -u root -p$dbPwd
-
                             SOURCE database/Create.sql;
-
                             exit
-                            EOF
+                            exit
+                            >> EOF
                             '''
                         }
                     }
