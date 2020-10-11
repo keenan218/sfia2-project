@@ -58,7 +58,7 @@ pipeline{
                             SOURCE database/Create.sql;
 
                             exit
-                            >> EOF
+                            EOF
                             '''
                         }
                     }
