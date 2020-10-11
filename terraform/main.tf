@@ -10,6 +10,16 @@ resource "aws_instance" "EC2" {
   key_name      = var.pem-key
 }
 
+### The Elastic IP for the Bastion
+resource "aws_eip" "EIP" {
+ vpc = true
+ instance = aws_instance.jenkins.id
+ associate_with_private_ip = aws_instance.jenkins.private_ip
+ tags = {
+  Name = "elastic-ip"
+ }
+}
+
 resource "aws_default_subnet" "default_az1" {
   availability_zone = "eu-west-2c"
 
