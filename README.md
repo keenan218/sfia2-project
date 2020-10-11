@@ -6,16 +6,16 @@ For this project we were tasked with deploying a prebuilt flask application. Sai
 
 ## Contents
 
-  * [Planning](#planning)
-  * [Risk Assessment](#risk-assessment)
-  * [Jira Board](#jira-board)
-  * [Project Infrarstructure](#project-infrarstructure)
-  * [Ansible](#ansible)
-  * [Docker & docker-compose](#docker--docker-compose)
-  * [Jenkins](#jenkins)
-  * [Kubernetes](#kubernetes)
-  * [Terraform](#terraform)
-  * [Project Deployment](#project-deployment)
+* [Planning](#planning)
+* [Risk Assessment](#risk-assessment)
+* [Jira Board](#jira-board)
+* [Project Infrarstructure](#project-infrarstructure)
+* [Ansible](#ansible)
+* [Docker & docker-compose](#docker--docker-compose)
+* [Jenkins](#jenkins)
+* [Kubernetes](#kubernetes)
+* [Terraform](#terraform)
+* [Project Deployment](#project-deployment)
   
 ## Planning
 As with every project a great deal of time is spent on planning and preperation, this ensures the project runs smoothly and allows the developer to stay on track having a list they can go back to monitoring their progress. 
@@ -45,10 +45,14 @@ Jenkins was utilised as the main component in this CI pipeline, the jenkinsfile 
 ### Terraform
 Terraform has been used to spin up the Jenkins VM and both RDS instances. Similar to ansible, due to time constraints terraform has also not been used to its fullest potential, It could be added to, by having the ability to also create both the test vm and the live vm. Ansible could also be integrated into terraform, omitting the need to manually set up individual vms like the jenkins vm. 
 
-## Project Deployment 
-
 ## Minimum viable product infrastructure diagram
 The MVP has been reffered to a couple of times through this document, as such I have left the infrastructure diagram which was in the project brief as an indication to what I have followed throughout the creation of my project.
 ![mvp-diagram](https://i.imgur.com/i5qfOas.png)
 
+----
 
+### **Author**
+
+* Keenan Bratley
+* QA Cloud Native Consultant
+* [KBratley@qa.com](KBratley@qa.com)
