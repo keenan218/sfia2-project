@@ -25,6 +25,8 @@ pipeline{
                             export SECRET_KEY=$secretKey
                             export TEST_DB_URI=$tDB_URI
 
+                            sudo -E DB_PASSWORD=$dbPwd SECRET_KEY=$secretKey DATABASE_URI=$dbUri docker-compose up -d --build
+
                             mysql -h test-db.csnk6wgrqbvm.eu-west-2.rds.amazonaws.com -P 3306 -u root -p$dbPwd
                             SOURCE database/Create.sql;
                             exit
