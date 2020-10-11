@@ -53,6 +53,8 @@ pipeline{
                             sudo -E DB_PASSWORD=$dbPwd SECRET_KEY=$secretKey DATABASE_URI=$dbUri docker-compose up -d --build
                             docker-compose ps -a
 
+                            exit
+                            >> EOF
                             '''
                         }
                     }
@@ -73,22 +75,7 @@ pipeline{
  //            }
  //        }
 
- //        stage('Download Docker and docker-compose') {
- //             steps {
- //                 sh '''
- //                 curl https://get.docker.com | sudo bash
- //                 sudo usermod -aG docker $(whoami)
- //                 sudo curl -L https://github.com/docker/compose/releases/download/1.27.3/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
- //                 sudo chmod +x /usr/local/bin/docker-compose
- //                 '''
- //             }
- //         }
 
- //         stage('Build') {
- //             steps {
- //                 sh "docker-compose up -d --build"
- //             }
- //         }
  //        stage('Build Image'){
  //             steps{
  //                 script{
