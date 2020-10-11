@@ -6,8 +6,8 @@ For this project we were tasked with deploying a prebuilt flask application. Sai
 
 ## Contents
 
-  - [Planning](#planning)
-  - [Risk Assessment](#risk-assessment)
+  * [Planning](#planning)
+  * [Risk Assessment](#risk-assessment)
   - [Jira Board](#jira-board)
   - [Project Infrarstructure](#project-infrarstructure)
   - [Ansible](#ansible)
