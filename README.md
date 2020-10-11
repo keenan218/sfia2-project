@@ -13,7 +13,10 @@ As with every project a great deal of time is spent on planning and preperation,
 ### Risk Assessment
 As with all projects there are always apparent risks, no matter how small they might be. With this project in particular there is no greate amount of data being stored and not a great deal of thing sthat could go wrong, howvere if this is scaled up issues could become apparent more quickly. Below are some risks that I have identified:
 ![risk assessment](https://i.imgur.com/R06k1Z6.png)
+
 ### Jira Board
+The Jira board helped with noting what my progress was throughout the course of this project, being able to move tasks from the 'to do' section into the completed section was a great relief, seeing such a large list dilute rather quickly. 
+![Jira Board](https://i.imgur.com/zIr04ll.png)
 
 ## Project Infrarstructure
 As directed by the MVP, the project is set up in a way of being as automated as possible. Terraform is utilised to create an EC2 instance and two RDS databases. Ansible is then applied to install jenkins on the vm which was created. A webhook was utilised which allowed me to have the jenkins pipeline triggered as soon as a commit was made to the source code provider (github). Once Jenkins is triggers it builds the project in a testing environment, permitting it reaches 100% in the tests it then builds the project in a live environment, with Kubernetes being applied to deploy the application.
