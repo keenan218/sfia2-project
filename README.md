@@ -51,8 +51,7 @@ The MVP has been reffered to a couple of times through this document, as such I 
 
 ----
 
-** Author **
-
+**Author**
 Keenan Bratley
 QA Cloud Native Consultant
 KBratley@qa.com
