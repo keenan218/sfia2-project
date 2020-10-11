@@ -30,22 +30,17 @@ Ansible was utilised in this project to download java and jenkins onto the Jenki
 Docker and docker-compose (DC) are utilised to containerise the deployment of the project, backend, frontent, mysql and nginx are all split nto their seperate containers. DC is utilised to build the application in both the testing environment and the live environment. 
 
 ### Jenkins
+Jenkins was utilised as the main component in this CI pipeline, the jenkinsfile was used to bring the code in from the SCM, SSH into both VM's, declare environment variables that have been previously configured in jenkins, connect to both test and live database and populate the databases and also run tests in the testing VM.
 
 ### Kubernetes
 
 ### Terraform
+Terraform has been used to spin up the Jenkins VM and both RDS instances. Similar to ansible, due to time constraints terraform has also not been used to its fullest potential, It could be added to, by having the ability to also create both the test vm and the live vm. Ansible could also be integrated into terraform, omitting the need to manually set up individual vms like the jenkins vm. 
 
 ## Project Deployment 
 
-## Brief
-
-The application must:
-
-- Be deployed to a **Virtual Machine for testing**
-- Be deployed in a **managed Kubernetes Cluster for production**
-- Make use of a **managed Database solution**
-
-## Application
+## Minimum viable product infrastructure diagram
+The MVP has been reffered to a couple of times through this document, as such I have left the infrastructure diagram which was in the project brief as an indication to what I have followed throughout the creation of my project.
 ![mvp-diagram](https://i.imgur.com/i5qfOas.png)
 
 
