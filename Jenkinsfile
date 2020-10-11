@@ -54,7 +54,7 @@ pipeline{
                             docker-compose ps -a
 
                             mysql -h test-db.csnk6wgrqbvm.eu-west-2.rds.amazonaws.com -P 3306 -u root -p
-                            ${dbPwd}
+                            $dbPwd
                             SOURCE sfia2-project/database/Create.sql
 
                             exit
