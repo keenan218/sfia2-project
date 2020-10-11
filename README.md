@@ -6,16 +6,16 @@ For this project we were tasked with deploying a prebuilt flask application. Sai
 
 ## Contents
 
-  * [Planning](#planning)
-  * [Risk Assessment](#risk-assessment)
-  * [Jira Board](#jira-board)
-  * [Project Infrarstructure](#project-infrarstructure)
-  * [Ansible](#ansible)
-  * [Docker & docker-compose](#docker--docker-compose)
-  * [Jenkins](#jenkins)
-  * [Kubernetes](#kubernetes)
-  * [Terraform](#terraform)
-  * [Project Deployment](#project-deployment)
+* [Planning](#planning)
+* [Risk Assessment](#risk-assessment)
+* [Jira Board](#jira-board)
+* [Project Infrarstructure](#project-infrarstructure)
+* [Ansible](#ansible)
+* [Docker & docker-compose](#docker--docker-compose)
+* [Jenkins](#jenkins)
+* [Kubernetes](#kubernetes)
+* [Terraform](#terraform)
+* [Project Deployment](#project-deployment)
   
 ## Planning
 As with every project a great deal of time is spent on planning and preperation, this ensures the project runs smoothly and allows the developer to stay on track having a list they can go back to monitoring their progress. 
@@ -57,4 +57,4 @@ Keenan Bratley
 
 QA Cloud Native Consultant
 
-KBratley@qa.com
+(KBratley@qa.com)
