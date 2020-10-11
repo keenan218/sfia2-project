@@ -57,4 +57,4 @@ Keenan Bratley
 
 QA Cloud Native Consultant
 
-(KBratley@qa.com)
+[KBratley@qa.com](KBratley@qa.com)
