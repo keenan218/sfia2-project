@@ -10,6 +10,7 @@ pipeline{
             steps{
                 withCredentials([string(credentialsId: 'DB_PASSWORD', variable: 'dbPwd'),
                                  string(credentialsId: 'SECRET_KEY', variable: 'secretKey'),
+                                 string(credentialsId: 'DATABASE_URI', variable: 'dbUri'),
                                  string(credentialsId: 'TEST_DB_URI', variable: 'tDB_URI'),
                                  file(credentialsId: 'EWS_EC2_KEY', variable: 'SSH_PEM')]) {
 
