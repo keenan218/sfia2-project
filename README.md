@@ -4,14 +4,15 @@ For this project we were tasked with deploying a prebuilt flask application. Sai
 
 ## Contents
 
-- Project Infrarstructure
--
+  - Project Infrarstructure
+  -
 
 ## Planning
 As with every project a great deal of time is spent on planning and preperation, this ensures the project runs smoothly and allows the developer to stay on track having a list they can go back to monitoring their progress. 
 
 ### Risk Assessment
-
+As with all projects there are always apparent risks, no matter how small they might be. With this project in particular there is no greate amount of data being stored and not a great deal of thing sthat could go wrong, howvere if this is scaled up issues could become apparent more quickly. Below are some risks that I have identified:
+![risk assessment](https://i.imgur.com/R06k1Z6.png)
 ### Jira Board
 
 ## Project Infrarstructure
