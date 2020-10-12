@@ -4,6 +4,12 @@
 
 For this project we were tasked with deploying a prebuilt flask application. Said application consisted of a webpage showing entries from a mysql database, and a backend written in python. The deployment of this app required me to utilise most of what I have learnt in the academy up until this point. The main technologies used were: Ansible, AWS EC2, AWS RDS, Docker and Docker-Compose, Jenkins, Kubernetes and Terraform. 
 
+## Project Brief
+The project brief specified multiple things we had to adhere to and aim for during the course of this project. Some of these main points are listed below:
+* Project must be deployed to a Virtual Machine for testing
+* Project must be deployed in a managed Kubernetes Cluster for production
+* Project must make use of a managed Database solution
+
 ## Contents
 
 * [Planning](#planning)
