@@ -21,9 +21,9 @@ pipeline{
                             ssh -tty -o StrictHostKeyChecking=no ubuntu@ec2-18-133-160-243.eu-west-2.compute.amazonaws.com  << EOF
 
                             cd sfia2-project
-                            docker pull keenan218/sfia2-project:database
-                            docker pull keenan218/sfia2-project:backend
-                            docker pull keenan218/sfia2-project:frontend
+                            docker pull keenan218/database:latest
+                            docker pull keenan218/backend:latest
+                            docker pull keenan218/frontend:latest
                             docker pull nginx:latest
 
                             export DB_PASSWORD=$dbPwd
@@ -60,9 +60,9 @@ pipeline{
                             ssh -tty -o StrictHostKeyChecking=no ubuntu@ec2-18-130-161-46.eu-west-2.compute.amazonaws.com << EOF
 
                             cd sfia2-project
-                            docker pull keenan218/sfia2-project:database
-                            docker pull keenan218/sfia2-project:backend
-                            docker pull keenan218/sfia2-project:frontend
+                            docker pull keenan218/database:latest
+                            docker pull keenan218/backend:latest
+                            docker pull keenan218/frontend:latest
                             docker pull nginx:latest
 
                             export DB_PASSWORD=$dbPwd
