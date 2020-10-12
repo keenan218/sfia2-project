@@ -55,8 +55,8 @@ pipeline{
                             sh '''
                             ssh -tty -o StrictHostKeyChecking=no ubuntu@18.130.161.46 << EOF
 
-                            git clone https://github.com/keenan218/sfia2-project.git
                             cd sfia2-project
+                            docker-compose pull
 
                             sudo -E DB_PASSWORD=$dbPwd SECRET_KEY=$secretKey DATABASE_URI=$dbUri docker-compose up -d --build
                             docker-compose ps -a
@@ -76,28 +76,6 @@ pipeline{
     }
 }
 
-//sudo -E TEST_DATABASE_URI=$tDB_URI SECRET_KEY=$dbPwd DB_PASSWORD=$dbPwd docker exec -it sfia2-project_backend_1 pytest  --cov-report term --cov=application
-
-
-
-
- //        stage('Build Image'){
- //             steps{
- //                 script{
- //                     if (env.rollback == 'false'){
- //                         image = docker.build("keenan218/sfia2-project")
- //                     }
- //                 }
- //             }
- //         }
- //         stage('Tag & Push Image'){
- //             steps{
- //                 script{
  //                     if (env.rollback == 'false'){
  //                         docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'){
  //                             image.push("${env.app_version}")
- //                         }
- //                     }
- //                 }
- //             }
- //         }
