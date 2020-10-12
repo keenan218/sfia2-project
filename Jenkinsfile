@@ -33,7 +33,7 @@ pipeline{
                             exit
 
                             sudo -E TEST_DATABASE_URI=$tDB_URI SECRET_KEY=$dbPwd DB_PASSWORD=$dbPwd docker exec sfia2-project_frontend_1 pytest  --cov-report term --cov=application
-                            sudo -E TEST_DATABASE_URI=$tDB_URI SECRET_KEY=$dbPwd DB_PASSWORD=$dbPwd docker exec sfia2-project_backend_1 pytest  --cov-report term-missing --cov=application
+
                             exit
                             >> EOF
                             '''
@@ -42,6 +42,7 @@ pipeline{
                 }
             }
         }
+        // sudo -E TEST_DATABASE_URI=$tDB_URI SECRET_KEY=$dbPwd DB_PASSWORD=$dbPwd docker exec sfia2-project_backend_1 pytest  --cov-report term-missing --cov=application
         stage('SSH to prod vm'){
             steps{
                 script{
