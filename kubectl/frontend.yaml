@@ -6,9 +6,9 @@ spec:
   selector:
     app: frontend
   ports:
-  - protocol: TCP
-    port: 5000
-    targetPort: 5000
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
   type: ClusterIP
 ---
 apiVersion: apps/v1
@@ -27,7 +27,7 @@ spec:
         app: frontend
     spec:
       containers:
-      - name: frontend
-        image: keenan218/sfia2-project:frontend
-        ports:
-        - containerPort: 5000
+        - name: frontend
+          image: keenan218/sfia2-project:frontend
+          ports:
+            - containerPort: 5000
