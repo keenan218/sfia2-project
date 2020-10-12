@@ -60,7 +60,7 @@ pipeline{
                             docker-compose pull
 
                             sudo -E DB_PASSWORD=$dbPwd SECRET_KEY=$secretKey DATABASE_URI=$dbUri docker-compose up -d --build
-                            docker-compose ps -a
+                            docker ps -a
 
                             mysql -h prod-db.csnk6wgrqbvm.eu-west-2.rds.amazonaws.com -P 3306 -u root -p$dbPwd
                             SOURCE database/Create.sql;
