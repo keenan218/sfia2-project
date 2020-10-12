@@ -18,7 +18,7 @@ pipeline{
 
                             sh '''
                             ssh -tty -o StrictHostKeyChecking=no ubuntu@ec2-18-133-160-243.eu-west-2.compute.amazonaws.com  << EOF
-                            git clone https://github.com/keenan218/sfia2-project.git
+                            docker-compose pull
                             cd sfia2-project
 
                             export DB_PASSWORD=$dbPwd

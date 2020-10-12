@@ -1,13 +1,13 @@
 version: '3.7'
 services:
   frontend:
-    image: frontend #:latest
+    image: keenan218/sfia2-project/frontend:latest
     build: ./frontend
     depends_on:
       - backend
     
   backend:
-    image: backend #:latest
+    image: keenan218/sfia2-project/backend:latest
     build: ./backend
     environment: 
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
@@ -20,13 +20,13 @@ services:
 
   mysql:
     # tty: true
-    image: database #:latest
+    image: keenan218/sfia2-project/database:latest
     build: ./database
     environment: 
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
       
   nginx:
-    image: nginx:latest
+    image: keenan218/sfia2-project/nginx:latest
     ports:
     - target: 80
       published: 80
