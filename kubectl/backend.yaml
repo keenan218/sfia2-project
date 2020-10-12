@@ -1,0 +1,50 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+spec:
+  selector:
+    app: backend
+  ports:
+    - protocol: TCP
+      port: 5001
+      targetPort: 5001
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: backend
+spec:
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: keenan218/sfia2-project:backend
+          env:
+            # Use secret in real usage
+            - name: MYSQL_ROOT_PASSWORD
+              value: password
+              # Use secret in real usage
+            - name: DB_PASSWORD
+              value: password
+            # Use secret in real usage
+            - name: TEST_DATABASE_URI
+              value: mysql+pymysql://root:password@test-db.csnk6wgrqbvm.eu-west-2.rds.amazonaws.com:3306/testdb
+            # Use secret in real usage
+            - name: DATABASE_URI
+              value: mysql+pymysql://root:password@prod-db.csnk6wgrqbvm.eu-west-2.rds.amazonaws.com:3306/users
+            - name: SECRET_KEY
+              value: password
+            - name : MYSQL_DATABASE
+              value: mysql
+          ports:
+            - containerPort: 5001
