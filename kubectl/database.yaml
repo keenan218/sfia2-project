@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: mysql
-          image: keenan218/sfia2-project:database
+          image: keenan218/database:latest
           env:
             - name: MYSQL_ROOT_PASSWORD
               value: password

@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: keenan218/sfia2-project:backend
+          image: keenan218/backend:latest
           env:
             - name: MYSQL_ROOT_PASSWORD
               value: password

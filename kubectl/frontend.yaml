@@ -28,6 +28,6 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: keenan218/sfia2-project:frontend
+          image: keenan218/frontend:latest
           ports:
             - containerPort: 5000
