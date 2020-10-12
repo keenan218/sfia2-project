@@ -11,6 +11,7 @@ pipeline{
                 script{
                     if (env.rollback == 'false'){
                         withCredentials([string(credentialsId: 'DB_PASSWORD', variable: 'dbPwd'),
+                                         string(credentialsId: 'MYSQL_ROOT_PASSWORD', variable: 'mysqlDBpwd'),
                                          string(credentialsId: 'SECRET_KEY', variable: 'secretKey'),
                                          string(credentialsId: 'DATABASE_URI', variable: 'dbUri'),
                                          string(credentialsId: 'TEST_DB_URI', variable: 'tDB_URI'),
