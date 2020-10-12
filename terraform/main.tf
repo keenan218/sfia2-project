@@ -54,6 +54,7 @@ resource "aws_db_instance" "RDSprod" {
   password             = "password"
   parameter_group_name = "default.mysql5.7"
   db_subnet_group_name = "default-vpc-7e4f1b16"
+  publicly_accessible  = true
   skip_final_snapshot  = true
   apply_immediately    = true
 }
