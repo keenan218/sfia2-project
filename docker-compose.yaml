@@ -25,6 +25,9 @@ services:
     container_name: database
     image: keenan218/database:latest
     build: ./database
+    ports:
+      - target: 3306
+        published: 3306
     environment: 
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
       

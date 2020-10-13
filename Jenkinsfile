@@ -84,6 +84,20 @@ pipeline{
                 }
             }
         }
+        stage('Deploy'){
+            steps{
+                script{
+                    if (env.rollback == 'false'){
+                        sh '''
+                        ssh -tty -o StrictHostKeyChecking=no ubuntu@ec2-18-130-161-46.eu-west-2.compute.amazonaws.com << EOF
+                        kubectl delete -f sfia2-project/kubernetes/
+                        kubectl apply -f sfia2-project/kubernetes/
+                        >> EOF
+                        '''
+                    }
+                }
+            }
+        }
     }
 }
 
