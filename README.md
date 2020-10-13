@@ -60,6 +60,9 @@ The MVP has been reffered to a couple of times through this document, as such I 
 ![mvp-diagram](https://i.imgur.com/i5qfOas.png)
 
 ----
+### Additional info
+![Presentation link](https://github.com/keenan218/Sfia2-ignored-files)
+![Jira board](https://k99.atlassian.net/jira/software/projects/SF2/boards/5)
 
 ### **Author**
 
