@@ -5,6 +5,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "EC2" {
+  count         = 2
   ami           = var.ami-id
   instance_type = var.instance-type
   key_name      = var.pem-key
