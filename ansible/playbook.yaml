@@ -1,6 +1,0 @@
-#- hosts: all
-#  tasks:
-#    - name: 'Install aptitude using apt'
-#        apt: ' '
-#    - name: 'Install Docker'
-
