@@ -62,6 +62,7 @@ The MVP has been reffered to a couple of times through this document, as such I 
 ----
 ### Additional info
 [Presentation link](https://docs.google.com/presentation/d/11qllL5QdNEt7ZfBy_pRzT2-kLWGZIMQWNwtjKPwnebE/edit?usp=sharing)
+
 [Jira board](https://k99.atlassian.net/jira/software/projects/SF2/boards/5)
 
 ### **Author**
